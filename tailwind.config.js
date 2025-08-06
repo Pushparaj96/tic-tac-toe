@@ -11,6 +11,38 @@ export default {
         toggleBgColor: "var(--color-toggle-bg)",
         bgColor: "var(--color-bg)",
         textColor: "var(--color-text)",
+
+        // Home Button
+        homeButton: "var(--home-button)",
+        homeButtonHover: "var(--home-button-hover)",
+        homeButtonText: "var(--home-button-text)",
+
+        // Restart Button
+        restartButton: "var(--restart-button)",
+        restartButtonHover: "var(--restart-button-hover)",
+        restartButtonText: "var(--restart-button-text)",
+
+        // Modal
+        modalBg: "var(--modal-bg)",
+        modalBorder: "var(--modal-border)",
+        modalText: "var(--modal-text)",
+        modalTextHover: "var(--modal-text-hover)",
+
+        // Modal Buttons
+        cancelButton: "var(--cancel-button)",
+        cancelButtonHover: "var(--cancel-button-hover)",
+        cancelButtonText: "var(--cancel-button-text)",
+        confirmButton: "var(--confirm-button)",
+        confirmButtonHover: "var(--confirm-button-hover)",
+        confirmButtonText: "var(--confirm-button-text)",
+
+        warningButton: "var(--warning-button)",
+        warningButtonHover: "var(--warning-button-hover)",
+        warningButtonText: "var(--warning-button-text)",
+
+        infoButton: "var(--info-button)",
+        infoButtonHover: "var(--info-button-hover)",
+        infoButtonText: "var(--info-button-text)",
       },
       animation: {
         pop: "pop 0.3s ease-out",

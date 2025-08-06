@@ -9,6 +9,40 @@
   --color-x: #3b82f6;
   --color-o: #ef4444;
   --color-win-glow: #facc15;
+
+  /* Home Button */
+  --home-button: #3b82f6;
+  --home-button-hover: #2563eb;
+  --home-button-text: #ffffff;
+
+  /* Restart Button */
+  --restart-button: #10b981;
+  --restart-button-hover: #059669;
+  --restart-button-text: #ffffff;
+
+  /* Modal */
+  --modal-bg: #ffffff;
+  --modal-border: #e5e7eb;
+  --modal-text: #1f2937;
+  --modal-text-hover: #374151;
+
+  /* Modal Buttons */
+  --cancel-button: #f3f4f6;
+  --cancel-button-hover: #e5e7eb;
+  --cancel-button-text: #374151;
+  --confirm-button: #ef4444;
+  --confirm-button-hover: #dc2626;
+  --confirm-button-text: #ffffff;
+
+  /* Warning Button (for restart/home actions) */
+  --warning-button: #f59e0b;
+  --warning-button-hover: #d97706;
+  --warning-button-text: #ffffff;
+
+  /* Info Button */
+  --info-button: #3b82f6;
+  --info-button-hover: #2563eb;
+  --info-button-text: #ffffff;
 }
 
 .dark {
@@ -16,6 +50,40 @@
   --color-text: #f9fafb;
   --color-toggle-bg: #1e2532;
   --color-win-glow: #fde68a;
+
+  /* Home Button */
+  --home-button: #3b82f6;
+  --home-button-hover: #60a5fa;
+  --home-button-text: #ffffff;
+
+  /* Restart Button */
+  --restart-button: #10b981;
+  --restart-button-hover: #34d399;
+  --restart-button-text: #ffffff;
+
+  /* Modal */
+  --modal-bg: #1f2937;
+  --modal-border: #374151;
+  --modal-text: #f9fafb;
+  --modal-text-hover: #d1d5db;
+
+  /* Modal Buttons */
+  --cancel-button: #374151;
+  --cancel-button-hover: #4b5563;
+  --cancel-button-text: #d1d5db;
+  --confirm-button: #ef4444;
+  --confirm-button-hover: #f87171;
+  --confirm-button-text: #ffffff;
+
+  /* Warning Button */
+  --warning-button: #fbbf24;
+  --warning-button-hover: #f59e0b;
+  --warning-button-text: #1f2937;
+
+  /* Info Button */
+  --info-button: #60a5fa;
+  --info-button-hover: #3b82f6;
+  --info-button-text: #1f2937;
 }
 
 /* theme switching */
