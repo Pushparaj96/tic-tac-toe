@@ -1,1 +1,30 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-toggle-bg: #f7fafc;
+  --color-x: #3b82f6;
+  --color-o: #ef4444;
+  --color-win-glow: #facc15;
+}
+
+.dark {
+  --color-bg: #1f2937;
+  --color-text: #f9fafb;
+  --color-toggle-bg: #1e2532;
+  --color-win-glow: #fde68a;
+}
+
+/* theme switching */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Disable transitions during theme change to prevent flash */
+.theme-transition-disable * {
+  transition: none !important;
+}
