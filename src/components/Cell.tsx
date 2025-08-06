@@ -8,9 +8,10 @@ type CellProps = {
 
 export default function Cell({ index, value }: CellProps) {
   const { state, dispatch } = useGame();
-  const { board, currentPlayer, winner } = state;
+  const { winner, winningCombo } = state;
 
   const isDisabled = value !== null || winner !== null;
+  const isWinningCell = winningCombo?.includes(index);
 
   const handleMove = () => {
     if (isDisabled) return;
@@ -38,18 +39,18 @@ export default function Cell({ index, value }: CellProps) {
       onKeyDown={handleKeyDown}
       disabled={isDisabled}
       aria-label={`Cell ${index + 1}`}
-      className={`
-            aspect-square text-3xl font-bold border rounded-md
-            flex items-center justify-center
-            border-gray-400 bg-white dark:bg-gray-800
-            focus:outline-none focus:ring-2 focus:ring-blue-500
-            ${playerColor}
-            ${
-              isDisabled
-                ? "cursor-not-allowed opacity-60"
-                : "hover:bg-gray-100 dark:hover:bg-gray-700"
-            }
-            `}
+      className={`aspect-square text-3xl font-bold border rounded-md 
+      flex items-center justify-center border-gray-400
+      bg-white dark:bg-gray-800 focus:outline-none focus:ring-2
+      focus:ring-blue-500
+      ${playerColor}
+      ${
+        isWinningCell
+          ? "border-4 border-winGlow"
+          : isDisabled
+          ? "cursor-not-allowed opacity-60"
+          : "hover:bg-gray-100 dark:hover:bg-gray-700"
+      }`}
     >
       {value}
     </button>

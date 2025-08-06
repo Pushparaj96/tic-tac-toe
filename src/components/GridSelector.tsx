@@ -14,7 +14,10 @@ const GridSelector = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-6 py-10">
+    <div className="flex flex-col items-center gap-6 py-10 border-winGlow border-2">
+      <h1 className="text-xl md:text-2xl font-semibold shadow-md">
+        Choose Board
+      </h1>
       <div className="flex gap-4">
         {[3, 4].map((size) => (
           <button

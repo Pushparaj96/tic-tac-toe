@@ -1,6 +1,5 @@
 import { getWinningLines } from "../utils/getWinningLines";
 import { generateBoard } from "../utils/generateBoard";
-import { checkWinner } from "../utils/checkWinner";
 
 export type Player = "X" | "O" | null;
 
@@ -32,7 +31,8 @@ export type GameAction =
       type: "SET_WINNER";
       payload: { winner: Player | "draw"; combo: number[] | null };
     }
-  | { type: "RESET_GAME" };
+  | { type: "RESET_GAME" }
+  | { type: "GO_HOME" };
 
 export const gameReducer = (
   state: GameState,
@@ -55,35 +55,12 @@ export const gameReducer = (
         winningLines: getWinningLines(state.gridSize),
         winner: null,
         currentPlayer: "X",
+        winningCombo: null,
       };
     case "MAKE_MOVE": {
       if (state.board[action.payload] || state.winner) return state;
       const newBoard = [...state.board];
       newBoard[action.payload] = state.currentPlayer;
-
-      // check winner
-      const result = checkWinner(newBoard, state.winningLines);
-      if (result) {
-        return {
-          ...state,
-          board: newBoard,
-          winner: result.winner,
-          winningCombo: result.combo,
-        };
-      }
-
-      // check draw
-      const isDraw = newBoard.every((cell) => cell !== null);
-
-      if (isDraw) {
-        return {
-          ...state,
-          board: newBoard,
-          winner: "draw",
-          winningCombo: null,
-        };
-      }
-
       return {
         ...state,
         board: newBoard,
@@ -99,8 +76,14 @@ export const gameReducer = (
     case "RESET_GAME":
       return {
         ...initialState,
+        winningLines: state.winningLines,
         gridSize: state.gridSize,
-        winningLines: getWinningLines(state.gridSize),
+        board: generateBoard(state.gridSize),
+        gameStarted: true,
+      };
+    case "GO_HOME":
+      return {
+        ...initialState,
       };
     default:
       return state;

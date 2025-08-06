@@ -6,7 +6,9 @@ const Board = () => {
   const { board, gridSize } = state;
 
   const gridStyle = {
-    gridTemplateColumns: `repeat(${gridSize}, minmax(0, 1fr))`,
+    gridTemplateColumns: `repeat(${gridSize}, minmax(60px, 1fr))`,
+    maxWidth: `${gridSize * 120}px`,
+    margin: "0 auto",
   };
   return (
     <div className="grid gap-2 p-4 max-w-screen-sm w-full" style={gridStyle}>

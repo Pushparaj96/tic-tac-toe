@@ -15,6 +15,7 @@ export default {
       animation: {
         pop: "pop 0.3s ease-out",
         fade: "fade 0.5s ease-in-out",
+        scaleUp: "scaleUp 2s ease-in-out forwards infinite",
       },
       keyframes: {
         pop: {
@@ -24,6 +25,11 @@ export default {
         fade: {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
+        },
+        scaleUp: {
+          "0%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.09)" },
+          "100%": { transform: "scale(1)" },
         },
       },
     },
