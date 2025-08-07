@@ -10,8 +10,13 @@ function App() {
 
   return (
     <div className="bg-bgColor text-textColor min-h-screen">
-      <h2>Tic Tac Toe app</h2>
-      <ThemeToggle />
+      <header className="flex items-center justify-between p-4 md:p-6">
+        <div className="w-10"></div>
+        <h1 className="text-2xl md:text-3xl font-bold text-center">
+          Tic Tac Toe Clash
+        </h1>
+        <ThemeToggle />
+      </header>
       {!state.gameStarted ? <GridSelector /> : <GameScreen />}
     </div>
   );

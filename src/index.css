@@ -3,21 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --color-bg: #ffffff;
-  --color-text: #000000;
-  --color-toggle-bg: #f7fafc;
+  --color-bg: #f8fafc;
+  --color-text: #1e293b;
+  --color-toggle-bg: #e2e8f0;
   --color-x: #3b82f6;
   --color-o: #ef4444;
-  --color-win-glow: #facc15;
+  --color-win-glow: #f59e0b;
 
   /* Home Button */
-  --home-button: #3b82f6;
-  --home-button-hover: #2563eb;
+  --home-button: #6366f1;
+  --home-button-hover: #4f46e5;
   --home-button-text: #ffffff;
 
   /* Restart Button */
-  --restart-button: #10b981;
-  --restart-button-hover: #059669;
+  --restart-button: #059669;
+  --restart-button-hover: #047857;
   --restart-button-text: #ffffff;
 
   /* Modal */
@@ -27,63 +27,63 @@
   --modal-text-hover: #374151;
 
   /* Modal Buttons */
-  --cancel-button: #f3f4f6;
-  --cancel-button-hover: #e5e7eb;
-  --cancel-button-text: #374151;
-  --confirm-button: #ef4444;
-  --confirm-button-hover: #dc2626;
+  --cancel-button: #f1f5f9;
+  --cancel-button-hover: #e2e8f0;
+  --cancel-button-text: #475569;
+  --confirm-button: #dc2626;
+  --confirm-button-hover: #b91c1c;
   --confirm-button-text: #ffffff;
 
-  /* Warning Button (for restart/home actions) */
-  --warning-button: #f59e0b;
-  --warning-button-hover: #d97706;
+  /* Warning Button */
+  --warning-button: #ea580c;
+  --warning-button-hover: #c2410c;
   --warning-button-text: #ffffff;
 
   /* Info Button */
-  --info-button: #3b82f6;
-  --info-button-hover: #2563eb;
+  --info-button: #0ea5e9;
+  --info-button-hover: #0284c7;
   --info-button-text: #ffffff;
 }
 
 .dark {
-  --color-bg: #1f2937;
-  --color-text: #f9fafb;
-  --color-toggle-bg: #1e2532;
-  --color-win-glow: #fde68a;
+  --color-bg: #0f172a;
+  --color-text: #f1f5f9;
+  --color-toggle-bg: #1e293b;
+  --color-win-glow: #fbbf24;
 
   /* Home Button */
-  --home-button: #3b82f6;
-  --home-button-hover: #60a5fa;
+  --home-button: #6366f1;
+  --home-button-hover: #818cf8;
   --home-button-text: #ffffff;
 
   /* Restart Button */
-  --restart-button: #10b981;
-  --restart-button-hover: #34d399;
+  --restart-button: #059669;
+  --restart-button-hover: #10b981;
   --restart-button-text: #ffffff;
 
   /* Modal */
-  --modal-bg: #1f2937;
+  --modal-bg: #1e293b;
   --modal-border: #374151;
-  --modal-text: #f9fafb;
-  --modal-text-hover: #d1d5db;
+  --modal-text: #f1f5f9;
+  --modal-text-hover: #e2e8f0;
 
   /* Modal Buttons */
-  --cancel-button: #374151;
-  --cancel-button-hover: #4b5563;
-  --cancel-button-text: #d1d5db;
-  --confirm-button: #ef4444;
-  --confirm-button-hover: #f87171;
+  --cancel-button: #334155;
+  --cancel-button-hover: #475569;
+  --cancel-button-text: #cbd5e1;
+  --confirm-button: #dc2626;
+  --confirm-button-hover: #ef4444;
   --confirm-button-text: #ffffff;
 
   /* Warning Button */
-  --warning-button: #fbbf24;
-  --warning-button-hover: #f59e0b;
-  --warning-button-text: #1f2937;
+  --warning-button: #f59e0b;
+  --warning-button-hover: #fbbf24;
+  --warning-button-text: #0f172a;
 
   /* Info Button */
-  --info-button: #60a5fa;
-  --info-button-hover: #3b82f6;
-  --info-button-text: #1f2937;
+  --info-button: #0ea5e9;
+  --info-button-hover: #38bdf8;
+  --info-button-text: #0f172a;
 }
 
 /* theme switching */
@@ -95,4 +95,11 @@
 /* Disable transitions during theme change to prevent flash */
 .theme-transition-disable * {
   transition: none !important;
+}
+
+/* custom utility classes*/
+@layer utilities {
+  .hover\:scale-102:hover {
+    transform: scale(1.02);
+  }
 }

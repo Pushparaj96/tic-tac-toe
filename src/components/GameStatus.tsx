@@ -10,13 +10,12 @@ const GameStatus = () => {
     useConfirmationModal();
 
   let message = "";
-  let messageColorClass = "text-textColor"; // default color
+  let messageColorClass = "text-textColor";
 
   const handleNewGame = () => {
     openModal({
       title: "Restart Game",
-      message:
-        "Are you sure you want to start a new game? Current progress will be lost.",
+      message: "Are you sure you want to start a new game?",
       confirmText: "Start New Game",
       variant: "warning",
     });
@@ -25,14 +24,13 @@ const GameStatus = () => {
   const handleHomeClick = () => {
     openModal({
       title: "Go to Home",
-      message: "Are you sure? The current game will be reset.",
+      message: "Are you sure? The current game will be lost.",
       confirmText: "Go Home",
       variant: "warning",
     });
   };
 
   const onModalConfirm = () => {
-    // Check which action was requested based on modal title
     if (modal.title === "Restart Game") {
       dispatch({ type: "RESET_GAME" });
     } else if (modal.title === "Go to Home") {
@@ -41,10 +39,10 @@ const GameStatus = () => {
     handleConfirm();
   };
 
-  // Set message and color based on game state
+  // message and color based on game state
   if (winner === "draw") {
     message = "It's a draw 🤝";
-    messageColorClass = "text-textColor"; // neutral color for draw
+    messageColorClass = "text-textColor";
   } else if (winner) {
     message = `Player ${winner} wins 🎉`;
     messageColorClass = winner === "X" ? "text-playerX" : "text-playerO";
@@ -74,7 +72,7 @@ const GameStatus = () => {
               className="flex items-center gap-2 px-4 py-2 bg-restartButton hover:bg-restartButtonHover text-restartButtonText rounded-lg transition-all duration-200 shadow-md hover:shadow-lg font-medium"
             >
               <Recycle size={18} />
-              Restart
+              New Game
             </button>
           </div>
         )}
