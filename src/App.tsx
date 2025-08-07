@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="bg-bgColor text-textColor min-h-screen">
-      <header className="flex items-center justify-between p-4 md:p-6">
+      <header className="flex items-center justify-between p-4 md:p-6 shadow-md">
         <div className="w-10"></div>
         <h1 className="text-2xl md:text-3xl font-bold text-center">
           Tic Tac Toe Clash
