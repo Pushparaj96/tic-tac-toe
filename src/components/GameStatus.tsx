@@ -1,7 +1,8 @@
-import { HomeIcon, Recycle } from "lucide-react";
+import { House, RotateCcw } from "lucide-react";
 import { useGame } from "../context/GameContext";
 import ConfirmationModal from "./ConfirmationModal";
 import { useConfirmationModal } from "../hooks/useConfirmatioModal";
+import Tooltip from "./ToolTip";
 
 const GameStatus = () => {
   const { state, dispatch } = useGame();
@@ -32,7 +33,7 @@ const GameStatus = () => {
 
   const onModalConfirm = () => {
     if (modal.title === "Restart Game") {
-      dispatch({ type: "RESET_GAME" });
+      dispatch({ type: "RESTART_GAME" });
     } else if (modal.title === "Go to Home") {
       dispatch({ type: "GO_HOME" });
     }
@@ -53,29 +54,37 @@ const GameStatus = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center gap-3 text-center my-4">
-        <p className={`text-xl md:text-2xl font-semibold ${messageColorClass}`}>
-          {message}
-        </p>
+      <div className="w-full">
         {gameStarted && (
-          <div className="flex gap-4">
-            <button
-              onClick={handleHomeClick}
-              className="flex items-center gap-2 px-4 py-2 bg-homeButton hover:bg-homeButtonHover text-homeButtonText rounded-lg transition-all duration-200 shadow-md hover:shadow-lg font-medium"
-            >
-              <HomeIcon size={18} />
-              Home
-            </button>
+          <div className="flex justify-end gap-2 mb-4">
+            <Tooltip text="Go Home" position="top">
+              <button
+                onClick={handleHomeClick}
+                className="p-2 bg-homeButton hover:bg-homeButtonHover text-homeButtonText rounded-lg transition-all duration-200 shadow-md hover:shadow-lg hover:scale-110"
+              >
+                <House size={20} />
+              </button>
+            </Tooltip>
 
-            <button
-              onClick={handleNewGame}
-              className="flex items-center gap-2 px-4 py-2 bg-restartButton hover:bg-restartButtonHover text-restartButtonText rounded-lg transition-all duration-200 shadow-md hover:shadow-lg font-medium"
-            >
-              <Recycle size={18} />
-              New Game
-            </button>
+            <Tooltip text="New Game" position="top">
+              <button
+                onClick={handleNewGame}
+                className="p-2 bg-restartButton hover:bg-restartButtonHover text-restartButtonText rounded-lg transition-all duration-200 shadow-md hover:shadow-lg hover:scale-110"
+              >
+                <RotateCcw size={20} />
+              </button>
+            </Tooltip>
           </div>
         )}
+
+        {/* Game Status Message*/}
+        <div className="text-center">
+          <p
+            className={`text-xl md:text-2xl font-semibold ${messageColorClass}`}
+          >
+            {message}
+          </p>
+        </div>
       </div>
 
       <ConfirmationModal

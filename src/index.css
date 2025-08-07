@@ -10,16 +10,19 @@
   --color-o: #ef4444;
   --color-win-glow: #f59e0b;
 
+  /* Header Title Colors */
+  --header-title-primary: #7c3aed;
+  --header-title-secondary: #ec4899;
+
   /* Home Button */
-  --home-button: #6366f1;
-  --home-button-hover: #4f46e5;
+  --home-button: #4f46e5;
+  --home-button-hover: #4338ca;
   --home-button-text: #ffffff;
 
   /* Restart Button */
-  --restart-button: #059669;
-  --restart-button-hover: #047857;
+  --restart-button: #16a34a;
+  --restart-button-hover: #15803d;
   --restart-button-text: #ffffff;
-
   /* Modal */
   --modal-bg: #ffffff;
   --modal-border: #e5e7eb;
@@ -51,14 +54,18 @@
   --color-toggle-bg: #1e293b;
   --color-win-glow: #fbbf24;
 
+  /* Header Title Colors */
+  --header-title-primary: #a855f7;
+  --header-title-secondary: #f472b6;
+
   /* Home Button */
   --home-button: #6366f1;
-  --home-button-hover: #818cf8;
+  --home-button-hover: #8b5cf6;
   --home-button-text: #ffffff;
 
   /* Restart Button */
-  --restart-button: #059669;
-  --restart-button-hover: #10b981;
+  --restart-button: #22c55e;
+  --restart-button-hover: #4ade80;
   --restart-button-text: #ffffff;
 
   /* Modal */

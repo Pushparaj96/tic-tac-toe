@@ -31,7 +31,7 @@ export type GameAction =
       type: "SET_WINNER";
       payload: { winner: Player | "draw"; combo: number[] | null };
     }
-  | { type: "RESET_GAME" }
+  | { type: "RESTART_GAME" }
   | { type: "GO_HOME" };
 
 export const gameReducer = (
@@ -73,7 +73,7 @@ export const gameReducer = (
         winner: action.payload.winner,
         winningCombo: action.payload.combo,
       };
-    case "RESET_GAME":
+    case "RESTART_GAME":
       return {
         ...initialState,
         winningLines: state.winningLines,

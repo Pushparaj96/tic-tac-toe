@@ -12,6 +12,10 @@ export default {
         bgColor: "var(--color-bg)",
         textColor: "var(--color-text)",
 
+        // Header title
+        headerTitlePrimary: "var(--header-title-primary)",
+        headerTitleSecondary: "var(--header-title-secondary)",
+
         // Home Button
         homeButton: "var(--home-button)",
         homeButtonHover: "var(--home-button-hover)",
