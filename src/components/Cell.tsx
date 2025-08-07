@@ -48,7 +48,7 @@ export default function Cell({ index, value }: CellProps) {
         isWinningCell
           ? "border-4 border-winGlow"
           : isDisabled
-          ? "cursor-not-allowed opacity-60"
+          ? "cursor-not-allowed opacity-90"
           : "hover:bg-gray-100 dark:hover:bg-gray-700"
       }`}
     >

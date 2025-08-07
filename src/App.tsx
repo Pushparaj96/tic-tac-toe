@@ -1,6 +1,6 @@
 import GameScreen from "./components/GameScreen";
 import GridSelector from "./components/GridSelector";
-import ThemeToggle from "./components/Theme/ThemeToggle";
+import Header from "./components/Header";
 import { useGame } from "./context/GameContext";
 import { useWinnerChecker } from "./hooks/useWinnerChecker";
 
@@ -10,13 +10,7 @@ function App() {
 
   return (
     <div className="bg-bgColor text-textColor min-h-screen">
-      <header className="flex items-center justify-between p-4 md:p-6 shadow-md">
-        <div className="w-10"></div>
-        <h1 className="text-2xl md:text-3xl font-bold text-center bg-gradient-to-r from-headerTitlePrimary to-headerTitleSecondary bg-clip-text text-transparent">
-          Tic Tac Toe Clash
-        </h1>
-        <ThemeToggle />
-      </header>
+      <Header />
       {!state.gameStarted ? <GridSelector /> : <GameScreen />}
     </div>
   );
