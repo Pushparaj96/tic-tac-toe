@@ -12,14 +12,6 @@ function getPreferredTheme(): Theme {
   return systemPrefersDark ? "dark" : "light";
 }
 
-function disableTransitionsTemporarily() {
-  const root = document.documentElement;
-  root.classList.add("theme-transition-disable");
-  window.setTimeout(() => {
-    root.classList.remove("theme-transition-disable");
-  }, 100);
-}
-
 export default function useTheme() {
   const [theme, setTheme] = useState<Theme>(getPreferredTheme);
 
