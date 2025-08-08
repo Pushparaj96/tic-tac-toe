@@ -60,4 +60,4 @@ Lucide React (icons)
 
 ## 🔗 Live Demo
 
-👉 [Play it here]()
+[![Live on Vercel](https://vercelbadge.vercel.app/api/pushparaj96/tic-tac-toe)](https://tic-tac-toe-clash.vercel.app/)
