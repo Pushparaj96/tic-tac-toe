@@ -2,7 +2,7 @@ import { House, RotateCcw } from "lucide-react";
 import { useGame } from "../context/GameContext";
 import ConfirmationModal from "./ConfirmationModal";
 import { useConfirmationModal } from "../hooks/useConfirmatioModal";
-import Tooltip from "./ToolTip";
+import Tooltip from "./Tooltip";
 
 const GameStatus = () => {
   const { state, dispatch } = useGame();
