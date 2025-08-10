@@ -14,6 +14,11 @@
   --header-title-primary: #7c3aed;
   --header-title-secondary: #ec4899;
 
+  /* Sound Button */
+  --sound-button: #ea580c;
+  --sound-button-hover: #c2410c;
+  --sound-button-text: #ffffff;
+
   /* Home Button */
   --home-button: #4f46e5;
   --home-button-hover: #4338ca;
@@ -58,15 +63,20 @@
   --header-title-primary: #a855f7;
   --header-title-secondary: #f472b6;
 
+  /* Sound Button */
+  --sound-button: #f59e0b;
+  --sound-button-hover: #fbbf24;
+  --sound-button-text: #0f172a;
+
   /* Home Button */
   --home-button: #6366f1;
   --home-button-hover: #8b5cf6;
-  --home-button-text: #ffffff;
+  --home-button-text: #0f172a;
 
   /* Restart Button */
   --restart-button: #22c55e;
   --restart-button-hover: #4ade80;
-  --restart-button-text: #ffffff;
+  --restart-button-text: #0f172a;
 
   /* Modal */
   --modal-bg: #1e293b;

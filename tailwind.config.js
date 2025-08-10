@@ -16,6 +16,11 @@ export default {
         headerTitlePrimary: "var(--header-title-primary)",
         headerTitleSecondary: "var(--header-title-secondary)",
 
+        // Sound Button
+        soundButton: "var(--sound-button)",
+        soundButtonHover: "var(--sound-button-hover)",
+        soundButtonText: "var(--sound-button-text)",
+
         // Home Button
         homeButton: "var(--home-button)",
         homeButtonHover: "var(--home-button-hover)",

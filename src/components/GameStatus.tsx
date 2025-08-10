@@ -1,11 +1,12 @@
-import { House, RotateCcw } from "lucide-react";
+import { House, RotateCcw, Volume2, VolumeX } from "lucide-react";
 import { useGame } from "../context/GameContext";
 import ConfirmationModal from "./ConfirmationModal";
 import { useConfirmationModal } from "../hooks/useConfirmatioModal";
 import Tooltip from "./Tooltip";
+import { useEffect } from "react";
 
 const GameStatus = () => {
-  const { state, dispatch } = useGame();
+  const { state, dispatch, playSound, toggleMute, isMuted } = useGame();
   const { winner, currentPlayer, gameStarted } = state;
   const { modal, handleConfirm, handleCancel, openModal } =
     useConfirmationModal();
@@ -52,11 +53,27 @@ const GameStatus = () => {
     messageColorClass = currentPlayer === "X" ? "text-playerX" : "text-playerO";
   }
 
+  useEffect(() => {
+    if (winner === "draw") {
+      playSound("draw");
+    } else if (winner === "X" || winner === "O") {
+      playSound("win");
+    }
+  }, [winner, playSound]);
+
   return (
     <>
       <div className="w-full">
         {gameStarted && (
           <div className="flex justify-end gap-2 mb-4">
+            <Tooltip text="Sound" position="top">
+              <button
+                onClick={toggleMute}
+                className="p-2 bg-soundButton hover:bg-soundButtonHover text-soundButtonText rounded-lg transition-all duration-200 shadow-md hover:shadow-lg hover:scale-110"
+              >
+                {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+              </button>
+            </Tooltip>
             <Tooltip text="Go Home" position="top">
               <button
                 onClick={handleHomeClick}

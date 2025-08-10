@@ -7,14 +7,15 @@ type CellProps = {
 };
 
 export default function Cell({ index, value }: CellProps) {
-  const { state, dispatch } = useGame();
-  const { winner, winningCombo } = state;
+  const { state, dispatch, playSound } = useGame();
+  const { winner, winningCombo, currentPlayer } = state;
 
   const isDisabled = value !== null || winner !== null;
   const isWinningCell = winningCombo?.includes(index);
 
   const handleMove = () => {
     if (isDisabled) return;
+    playSound(currentPlayer === "X" ? "X" : "O");
     dispatch({ type: "MAKE_MOVE", payload: index });
   };
 
