@@ -3,7 +3,7 @@ import { useGame } from "../context/GameContext";
 import ConfirmationModal from "./ConfirmationModal";
 import { useConfirmationModal } from "../hooks/useConfirmatioModal";
 import Tooltip from "./Tooltip";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const GameStatus = () => {
   const { state, dispatch, playSound, toggleMute, isMuted } = useGame();
@@ -13,6 +13,7 @@ const GameStatus = () => {
 
   let message = "";
   let messageColorClass = "text-textColor";
+  const hasPlayedWinnerSound = useRef(false);
 
   const handleNewGame = () => {
     openModal({
@@ -54,11 +55,20 @@ const GameStatus = () => {
   }
 
   useEffect(() => {
+    if (!winner) {
+      hasPlayedWinnerSound.current = false;
+      return;
+    }
+
+    if (hasPlayedWinnerSound.current) return;
+
     if (winner === "draw") {
       playSound("draw");
     } else if (winner === "X" || winner === "O") {
       playSound("win");
     }
+
+    hasPlayedWinnerSound.current = true;
   }, [winner, playSound]);
 
   return (
